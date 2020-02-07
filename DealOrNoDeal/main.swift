@@ -78,7 +78,7 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
     while true {
         
         // Ask for input
-        print("Which briefcase have you opened on turn \(turn)")
+        print("Which briefcase have you opened on turn \(turn)?")
         guard let input = readLine() else {
             
             // No input given, return to top of loop and ask again
@@ -192,3 +192,9 @@ var average = findAverage()
 
 // STUDENTS: Now tell the player whether to take the deal, or not.
 
+if Double(offer) > average {
+    print("Deal")}
+
+else {
+    print("No deal")
+}
