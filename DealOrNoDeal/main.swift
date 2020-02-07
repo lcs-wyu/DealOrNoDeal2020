@@ -12,6 +12,7 @@ import Foundation
 // INPUT SECTION OF PROGRAM
 //
 var briefcasesOpened = -1
+var briefcaseOpenedThisTime = 0
 
 // Loop until valid input provided by user
 while true {
@@ -101,14 +102,14 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
         }
         
         // If we've made it here, the input is valid
-        briefcasesOpened = intGiven
+        briefcaseOpenedThisTime = intGiven
         
         // Stop looping
         break
         
     }
     // The statement below can be modified
-    return 0
+    return briefcaseOpenedThisTime
     
 }
 
@@ -125,8 +126,21 @@ for turn in 1...briefcasesOpened {
 
 // STUDENTS: Do any remaining calculations you might need below.
 
+func findAverage() -> Double {
+    
+    //Iterate over values and add them up
+    
+    var runningTotal = 0
+    for value in briefcaseValues {
+        runningTotal += value
+        
+    }
+    
+    
+    return Double(runningTotal)/Double((10 - briefcasesOpened))
+}
 
-
+var average = findAverage()
 
 //
 // OUTPUT SECTION OF PROGRAM
