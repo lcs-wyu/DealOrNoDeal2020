@@ -13,6 +13,7 @@ import Foundation
 //
 var briefcasesOpened = -1
 var briefcaseOpenedThisTime = 0
+var bankerOffer = 0
 
 // Loop until valid input provided by user
 while true {
@@ -125,6 +126,48 @@ for turn in 1...briefcasesOpened {
 }
 
 // STUDENTS: Do any remaining calculations you might need below.
+func getBankerOffer() -> Int {
+
+while true {
+        
+        // Ask for input
+        print("What is the banker's offer?")
+        guard let input2 = readLine() else {
+            
+            // No input given, return to top of loop and ask again
+            continue
+        }
+        
+        // Attempt to make input into an integer
+        guard let intGiven2 = Int(input2) else {
+            
+            // Could not make input into an integer, so return to top and ask again
+            continue
+
+        }
+        
+        // Check that integer is in desired range
+        // REMEMBER: Guard statement conditions describe what we WANT
+        guard intGiven2 > 0 else {
+            
+            // Integer not in desired range, return to top and ask again
+            continue
+            
+        }
+        
+        // If we've made it here, the input is valid
+        bankerOffer = intGiven2
+        
+        // Stop looping
+        break
+        
+    }
+    // The statement below can be modified
+    return bankerOffer
+    
+}
+
+var offer = getBankerOffer()
 
 func findAverage() -> Double {
     
@@ -146,4 +189,6 @@ var average = findAverage()
 // OUTPUT SECTION OF PROGRAM
 //
 
+
 // STUDENTS: Now tell the player whether to take the deal, or not.
+
